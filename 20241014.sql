@@ -48,5 +48,17 @@ SELECT * FROM CAR WHERE CAR_PRICE BETWEEN 7000 AND 9000;
 -- 자동차 제조사가 Kia 이면서 금액이 7000이상 9000이하
 SELECT * FROM CAR WHERE CAR_MAKER LIKE 'Kia' AND CAR_PRICE BETWEEN 7000 AND 9000;
 
+-- 자동차 번호가 3번째 자리에서 8, 4번째 자리가 9인 자동차 조회
+SELECT * FROM CAR WHERE CAR_ID LIKE '__89%';
+SELECT * FROM CAR WHERE CAR_ID LIKE '__89______';
+
+-- 자동차 테이블에서 금액이 10000이 넘으면 -3000
+UPDATE CAR SET CAR_PRICE = CAR_PRICE - 3000 WHERE CAR_PRICE >= 10000;
+-- 자동차 테이블에서 자동차 금액을 전부 30% 할인한 금액으로 낮추세요
+UPDATE CAR SET CAR_PRICE = CAR_PRICE * 0.7;
+-- 자동차 테이블에서 제조사가 Jeep인 데이터를 삭제
+DELETE FROM CAR WHERE CAR_MAKER LIKE 'Jeep';
+
+
 
 
